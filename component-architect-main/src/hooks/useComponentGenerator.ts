@@ -81,6 +81,27 @@ export function useComponentGenerator(): UseComponentGeneratorReturn {
 
       const data = await res.json();
 
+      // FIX: Normalize templates and styles globally so everything (Editor, Preview, History)
+      // stays in sync with the StackBlitz sandbox filenames.
+      const normalize = (ts: string, html: string) => {
+        let normalizedTs = ts;
+        if (html) {
+          normalizedTs = normalizedTs.replace(
+            /templateUrl\s*:\s*['"]([^'"]+)['"]/g,
+            "templateUrl: './app.component.html'"
+          );
+        }
+        normalizedTs = normalizedTs.replace(
+          /styleUrls\s*:\s*\[[\s\S]*?\]/g,
+          "styleUrls: ['./app.component.css']"
+        );
+        return normalizedTs;
+      };
+
+      if (data.ts_code) {
+        data.ts_code = normalize(data.ts_code, data.html_code);
+      }
+
       setStatus("validating");
       await new Promise((r) => setTimeout(r, 1500));
 

@@ -104,21 +104,6 @@ export function RightPanel({ componentData, isProcessing }: RightPanelProps) {
       selector = `app-${selector}`;
     }
 
-    // FIX: Normalize filenames so they always match what we provide to StackBlitz
-    let finalTsCode = tsCode;
-    if (htmlCode) {
-      // Replace any templateUrl with the specific path we use in the sandbox
-      finalTsCode = finalTsCode.replace(
-        /templateUrl\s*:\s*['"]([^'"]+)['"]/g,
-        "templateUrl: './app.component.html'"
-      );
-    }
-    // Standardize styleUrls (even if it's a multiline array)
-    finalTsCode = finalTsCode.replace(
-      /styleUrls\s*:\s*\[[\s\S]*?\]/g,
-      "styleUrls: ['./app.component.css']"
-    );
-
     const files: Record<string, string> = {
       "src/main.ts": `
 import 'zone.js';
@@ -145,7 +130,7 @@ bootstrapApplication(${className}, { providers: [provideAnimations()] })
 </html>`.trim(),
 
       "src/styles.css": "body { margin: 0; font-family: 'Inter', sans-serif; }",
-      "src/app/app.component.ts": finalTsCode,
+      "src/app/app.component.ts": tsCode,
       ...(htmlCode ? { "src/app/app.component.html": htmlCode } : {}),
       "src/app/app.component.css": ":host { display: block; }",
 

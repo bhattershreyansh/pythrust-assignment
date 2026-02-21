@@ -83,6 +83,15 @@ def validate_component(code: dict) -> dict:
     if "export class" not in ts:
         errors.append("MISSING_CLASS: Component must export a class")
     
+    # 5. Check for correct sandbox filenames
+    if "templateUrl" in ts:
+        if "'./app.component.html'" not in ts and '"./app.component.html"' not in ts:
+            errors.append("INVALID_FILENAME: templateUrl must be exactly './app.component.html'")
+            
+    if "styleUrls" in ts:
+        if "'./app.component.css'" not in ts and '"./app.component.css"' not in ts:
+            errors.append("INVALID_FILENAME: styleUrls must use exactly ['./app.component.css']")
+
     return {
         "valid": len(errors) == 0,
         "errors": errors,
