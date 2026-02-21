@@ -24,7 +24,7 @@ export class AppComponent { ... }
 
 REQUIREMENTS:
 - Always output the TypeScript and HTML separated by `---HTML---`.
-- The `@Component` must reference an external HTML file with `templateUrl: './app.component.html'` (do not inline `template`).
+- The `@Component` MUST EXACTLY use `templateUrl: './app.component.html'` and `styleUrls: ['./app.component.css']` regardless of the component name or selector. Do NOT use filenames like `./login-page.component.html`.
 - Use `imports: [CommonModule]` (and include `FormsModule` if you use `ngModel`).
 
 Generate the requested component now based on the user's prompt.
