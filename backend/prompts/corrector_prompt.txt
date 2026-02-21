@@ -1,0 +1,14 @@
+The Angular component you generated has validation errors.
+Fix ALL the errors listed below and output the corrected component.
+Remember: OUTPUT ONLY RAW CODE. No explanations.
+
+ERRORS FOUND:
+{errors}
+
+ORIGINAL CODE WITH ISSUES:
+{original_code}
+
+DESIGN SYSTEM CONSTRAINTS:
+{design_system}
+
+Output the fixed component now:

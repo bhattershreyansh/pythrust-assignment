@@ -1,0 +1,56 @@
+Published using Google Docs
+Report abuseLearn more
+Assignment - Generative AI Engineer Intern | Pythrust Technologies
+Updated automatically every 5 minutes
+Assignment - Gen AI Engineer (Product & Code Generation)
+
+Role: Generative AI Engineer Intern
+
+Company: Pythrust Technologies
+
+Job link: https://www.linkedin.com/jobs/view/4373312816/
+
+Objective
+Evaluate your ability to build agentic code-generation workflows, manage structured LLM outputs, and implement self-correction loops the core building blocks of platforms like Lovable or Bolt.new. We are looking for engineers who can move beyond simple chat and build systems that generate functional, governed code.
+
+This assignment is for evaluation only and will not be used in any client project or commercial context.
+
+Problem Statement
+Build a "Guided Component Architect" that transforms natural language descriptions into valid, styled Angular components while strictly adhering to a predefined design system.
+
+Your task:
+
+Define a Design System: Create a JSON file containing specific design tokens (e.g., primary-color: #6366f1, border-radius: 8px, font: 'Inter').
+The Generator: Build a pipeline that takes a user prompt (e.g., "A login card with a glassmorphism effect") and generates an Angular component using Angular Material / Tailwind CSS.
+The Validator: Implement a "Linter-Agent" that inspects the generated code. It must check if:
+The code uses the colors/tokens from your JSON file.
+The code is syntactically valid (e.g., no missing brackets).
+Self-Correction: If the Validator finds an error, the system must automatically re-prompt the LLM with the error logs to "fix" the component before the final output is shown.
+Requirements
+Must-have:
+
+Code Generation Logic:
+Prompt engineering to ensure the LLM outputs raw code only (no conversational filler).
+Integration of the Design System JSON into the prompt context.
+The Validation Loop:
+An automated check (Regex, AST parser, or a secondary "Critic" LLM call) to verify design token compliance.
+At least one automated retry/self-correction step if the first output is invalid.
+Code Quality:
+Clean, modular Python or TypeScript code.
+A clear README explaining the "Agentic Loop" architecture.
+Timebox: 4–6 hours max.
+Nice-to-have (Optional):
+
+Live Preview: A minimal Vercel app to render the generated code.
+Export Feature: Option to save the generated code as a .tsx file.
+Multi-turn editing: Ability to say "Now make the button rounded" as a follow-up.
+Any questions?
+Feel free to assume an answer and mention it in your submission (e.g., "I assumed the user has Tailwind CSS pre-installed in their environment").
+
+Submission
+GitHub/GitLab repo link or zipped folder.
+README + requirements.txt / package.json.
+A short 300–400 word note on your approach to "Prompt Injection" prevention in code generation and how you would scale this to build full-page applications.
+Submit your assignment here: https://forms.gle/vb6SbZrpUzDiZuNn6
+All the best!
+

@@ -1,0 +1,71 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# C extensions
+*.egg-info/
+.installed.cfg
+*.egg
+pip-wheel-metadata/
+
+# Virtual environments
+venv/
+env/
+ENV/
+env.bak/
+.venv/
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# Logs
+*.log
+logs/
+
+# Databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Backend-specific (FastAPI)
+instance/
+
+# Frontend-specific (React)
+node_modules/
+dist/
+build/
+.eslintcache
+.nyc_output
+
+# Docker
+.dockerignore
+Dockerfile.*  # Keep main Dockerfiles
+.gitignore    # Meta-ignore
+README.md     # Optional, but keep for docs
+
+# Dependencies
+.pip/
+.pip-cache/
